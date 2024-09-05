@@ -9,7 +9,7 @@ export const metedata = {
 }
 
 export default function page() {
-    const isAuthenticated = false;
+    const isAuthenticated = true;
     let children = (
        <Login/>
     )
