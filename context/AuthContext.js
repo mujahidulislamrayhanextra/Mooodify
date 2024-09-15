@@ -14,7 +14,7 @@ export function useAuth(){
 export function AuthProvider({children}){
     const [currentUser,setCurrentUser] = useState(null);
 
-    const [userDateObj,setUserDataObj ] = useState({})
+    const [userDateObj,setUserDataObj ] = useState(null)
 
     const [loading,setLoading ] = useState(true);
 

@@ -3,6 +3,8 @@ import "./globals.css";
 import { headers } from "next/headers";
 import Link from "next/link";
 import { AuthProvider } from "@/context/AuthContext";
+import Head from "./head";
+import Logout from "@/components/Logout";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 const fugaz = Fugaz_One({ subsets: ["latin"],weight:["400"]});
@@ -16,8 +18,9 @@ export default function RootLayout({ children }) {
   const header = (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4" >
       <Link href={'/'}>
-     <h1 className={' text-base sm:text-lg textGtadient  ' + fugaz.className}>Mooodify</h1> 
+     <h1 className={' text-base sm:text-lg textGradient  ' + fugaz.className}>Mooodify</h1> 
      </Link >
+     <Logout/>
      <div className="flex items-center justify-between">Placeholder</div>
      
     </header>
@@ -31,6 +34,7 @@ export default function RootLayout({ children }) {
   )
   return (
     <html lang="en">
+      <Head/>
       <AuthProvider>
       <body className={'w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ' +  openSans.className}>
         {header}
